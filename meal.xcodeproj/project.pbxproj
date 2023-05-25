@@ -11,6 +11,10 @@
 		F8A4820C2A0FD71D0099C60A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4820B2A0FD71D0099C60A /* ContentView.swift */; };
 		F8A4820E2A0FD7220099C60A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A4820D2A0FD7220099C60A /* Assets.xcassets */; };
 		F8A482112A0FD7220099C60A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A482102A0FD7220099C60A /* Preview Assets.xcassets */; };
+		F8A482182A0FD7C50099C60A /* MealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A482172A0FD7C50099C60A /* MealData.swift */; };
+		F8A4821A2A0FDBBA0099C60A /* MealsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A482192A0FDBB90099C60A /* MealsGenerator.swift */; };
+		F8A4821C2A0FEF5E0099C60A /* AsyncimageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4821B2A0FEF5E0099C60A /* AsyncimageView.swift */; };
+		F8A4821F2A1907CF0099C60A /* LoginApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A4821E2A1907CF0099C60A /* LoginApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		F8A4820B2A0FD71D0099C60A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8A4820D2A0FD7220099C60A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8A482102A0FD7220099C60A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8A482172A0FD7C50099C60A /* MealData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealData.swift; sourceTree = "<group>"; };
+		F8A482192A0FDBB90099C60A /* MealsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsGenerator.swift; sourceTree = "<group>"; };
+		F8A4821B2A0FEF5E0099C60A /* AsyncimageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncimageView.swift; sourceTree = "<group>"; };
+		F8A4821E2A1907CF0099C60A /* LoginApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,14 @@
 		F8A482082A0FD71D0099C60A /* meal */ = {
 			isa = PBXGroup;
 			children = (
+				F8A4821D2A1907BB0099C60A /* loginApp */,
 				F8A482092A0FD71D0099C60A /* mealApp.swift */,
 				F8A4820B2A0FD71D0099C60A /* ContentView.swift */,
+				F8A482172A0FD7C50099C60A /* MealData.swift */,
 				F8A4820D2A0FD7220099C60A /* Assets.xcassets */,
 				F8A4820F2A0FD7220099C60A /* Preview Content */,
+				F8A482192A0FDBB90099C60A /* MealsGenerator.swift */,
+				F8A4821B2A0FEF5E0099C60A /* AsyncimageView.swift */,
 			);
 			path = meal;
 			sourceTree = "<group>";
@@ -65,6 +77,14 @@
 				F8A482102A0FD7220099C60A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F8A4821D2A1907BB0099C60A /* loginApp */ = {
+			isa = PBXGroup;
+			children = (
+				F8A4821E2A1907CF0099C60A /* LoginApp.swift */,
+			);
+			path = loginApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +131,9 @@
 				Base,
 			);
 			mainGroup = F8A481FD2A0FD71D0099C60A;
+			packageReferences = (
+				F8A482202A1A70BB0099C60A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F8A482072A0FD71D0099C60A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A4821A2A0FDBBA0099C60A /* MealsGenerator.swift in Sources */,
+				F8A4821F2A1907CF0099C60A /* LoginApp.swift in Sources */,
+				F8A4821C2A0FEF5E0099C60A /* AsyncimageView.swift in Sources */,
 				F8A4820C2A0FD71D0099C60A /* ContentView.swift in Sources */,
 				F8A4820A2A0FD71D0099C60A /* mealApp.swift in Sources */,
+				F8A482182A0FD7C50099C60A /* MealData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +366,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8A482202A1A70BB0099C60A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = F8A481FE2A0FD71D0099C60A /* Project object */;
 }
