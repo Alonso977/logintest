@@ -10,6 +10,7 @@ import Firebase
 
 struct ContentView: View {
     
+    //
     @State private var email = ""
     @State private var password = ""
     @State private var alertMessage = ""
@@ -90,7 +91,7 @@ struct ContentView: View {
                     
                     Button {
                         // login function
-                        
+                        login()
                     } label: {
                         Text ("Login")
                             .bold()
@@ -115,6 +116,7 @@ struct ContentView: View {
                             )
                             .foregroundColor(.white)
                     }
+                    
                 } // end of hstack buttons login and logout
                 .offset(x: -45, y: -30)
                 
@@ -125,14 +127,14 @@ struct ContentView: View {
             VStack{
                 Text("Or signup using social links")
                     .foregroundColor(.white)
-                    .font(.system(size: 12, weight: .bold, design: .rounded))
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
                     .opacity(0.7)
-                    .offset(x: 5)
+                    .offset(x: 3, y: 25)
                     .padding(.top, 3)
                 
                 Image("128")
                     .resizable()
-                    .frame(width: 140, height: 40)
+                    .frame(width: 140, height: 100)
                 
             } //end of vstack for social icons
             .offset(x:70, y:280)
@@ -142,7 +144,7 @@ struct ContentView: View {
     }
     
     // Alonso: - start of functions for the buttons
-
+    
     func register() {
         
         Auth.auth().createUser(withEmail: email, password: password){ result, error in
@@ -150,8 +152,26 @@ struct ContentView: View {
                 print("Signup Error \(error.localizedDescription)")
                 alertMessage = "Sign Up Error Ocurred \(error.localizedDescription)"
                 showingAlert = true
-            }else {
+            }
+            else {
                 print("Registration successfull")
+            }
+        }
+        
+        
+    } //end of register function
+    
+    // Alonso: - start of functions for the buttons
+    
+    func login() {
+        
+        Auth.auth().signIn(withEmail: email, password: password){ result, error in
+            if let error = error { // login error
+                print("Login Error \(error.localizedDescription)")
+                alertMessage = "Sign In Error Ocurred \(error.localizedDescription)"
+                showingAlert = true
+            }else {
+                print("Login successfull")
             }
         }
         
